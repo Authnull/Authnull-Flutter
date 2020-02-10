@@ -11,11 +11,14 @@ class SignIn extends StatelessWidget {
   final List<AuthorizationConfig> configs;
   final void Function(AuthorizationStaus status) next;
 
+  final Widget frame;
+
   SignIn({
     Key key,
     @required this.continueWithText,
     @required this.configs,
     @required this.next,
+    this.frame,
   }) : super(key: key);
 
   @override
@@ -25,7 +28,7 @@ class SignIn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Expanded(
-          child: Container(),
+          child: this._getFrame(),
         ),
         Container(
           margin: const EdgeInsets.only(left: 20.0),
@@ -37,6 +40,13 @@ class SignIn extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Widget _getFrame() {
+    if (this.frame == null) {
+      return Container();
+    }
+    return this.frame;
   }
 
   List<Widget> _renderConfigs(List<AuthorizationConfig> configs) {

@@ -12,12 +12,15 @@ class Authnull extends StatefulWidget {
 
   final void Function(AuthorizationStaus status) onSignIn;
 
+  final Widget frame;
+
   Authnull({
     Key key,
     @required this.continueWithText,
     @required this.backgroundImage,
     @required this.configs,
     @required this.onSignIn,
+    this.frame,
   }) : super(key: key);
 
   @override
@@ -50,7 +53,6 @@ class AuthnullState extends State<Authnull> {
               ),
             ),
             SignIn(
-              continueWithText: widget.continueWithText,
               configs: widget.configs,
               next: (AuthorizationStaus status) async {
                 final AuthorizationManager manager =
@@ -58,6 +60,8 @@ class AuthnullState extends State<Authnull> {
                 await manager.setType(status.platform);
                 widget.onSignIn(status);
               },
+              continueWithText: widget.continueWithText,
+              frame: widget.frame,
             ),
           ],
         ),

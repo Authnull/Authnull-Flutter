@@ -6,3 +6,8 @@
 
 - Add Sign-Out function
 - Add Manager type Storage
+
+## 0.1.2
+
+- Allow edit icon for each service
+- Allow use customized frame for sign-in view
