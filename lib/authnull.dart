@@ -1,13 +1,26 @@
-import 'dart:async';
+import 'package:authnull/components/sign-in.dart';
+import 'package:flutter/material.dart';
 
-import 'package:flutter/services.dart';
-
-class Authnull {
-  static const MethodChannel _channel =
-      const MethodChannel('authnull');
-
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+class Authnull extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://cdn.pixabay.com/photo/2020/02/04/20/48/italy-4819291_960_720.jpg',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SignIn(),
+          ],
+        ),
+      ),
+    );
   }
 }
