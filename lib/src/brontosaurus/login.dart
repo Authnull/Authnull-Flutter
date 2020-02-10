@@ -12,11 +12,11 @@ class BrontosaurusLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BrontosaurusView(
+    return BrontosaurusViewLite(
       appBar: this.config.appBar,
       server: this.config.server,
       application: this.config.applicationKey,
-      next: () async {
+      next: (String token) async {
         // final AuthorizationManager manager = AuthorizationManager.instance();
       },
     );

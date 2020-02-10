@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  brontosaurus_flutter: ^0.1.2
+  brontosaurus_flutter: ^0.1.3
   shared_preferences: ^0.5.6+1
 
 dev_dependencies:
