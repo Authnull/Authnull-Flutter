@@ -2,6 +2,7 @@ import 'package:authnull/src/auth/config.dart';
 import 'package:flutter/material.dart';
 
 class BrontosaurusConfig extends AuthorizationConfig {
+  @override
   final String type = AuthorizationPlatform.Brontosaurus;
   final AppBar appBar;
 
@@ -16,7 +17,25 @@ class BrontosaurusConfig extends AuthorizationConfig {
 }
 
 class BrontosaurusStatus extends AuthorizationStaus {
+  @override
   final String platform = AuthorizationPlatform.Brontosaurus;
 
-  BrontosaurusStatus();
+  final String raw;
+
+  BrontosaurusStatus({
+    @required this.raw,
+  });
+
+  @override
+  Map<String, dynamic> toMap() {
+    Map<String, dynamic> map = {
+      'raw': this.raw,
+    };
+    return map;
+  }
+
+  @override
+  String toString() {
+    return this.toMap().toString();
+  }
 }

@@ -9,4 +9,7 @@ abstract class AuthorizationConfig {
 
 abstract class AuthorizationStaus {
   String platform;
+
+  Map<String, dynamic> toMap();
+  String toString();
 }

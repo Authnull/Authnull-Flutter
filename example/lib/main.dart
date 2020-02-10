@@ -20,8 +20,7 @@ void main() => runApp(
           )
         ],
         onSignIn: (AuthorizationStaus status) {
-          print('here');
-          print(status.platform);
+          print(status.toString());
         },
       ),
     );
