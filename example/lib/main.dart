@@ -1,5 +1,4 @@
+import 'package:authnull_example/core.dart';
 import 'package:flutter/material.dart';
 
-import 'entry.dart';
-
-void main() => runApp(MyApp());
+void main() => runApp(Authnull());
