@@ -7,11 +7,13 @@ class SignIn extends StatelessWidget {
   final Widget continueWithText;
 
   final List<AuthorizationConfig> configs;
+  final void Function(AuthorizationStaus status) next;
 
   SignIn({
     Key key,
     @required this.continueWithText,
     @required this.configs,
+    @required this.next,
   }) : super(key: key);
 
   @override
@@ -46,6 +48,7 @@ class SignIn extends StatelessWidget {
       final BrontosaurusConfig brontosaurusConfig = config;
       return BrontosarusContinueWithButton(
         config: brontosaurusConfig,
+        next: this.next,
       );
     }
     return Container();

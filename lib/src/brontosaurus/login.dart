@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 class BrontosaurusLogin extends StatelessWidget {
   final BrontosaurusConfig config;
 
+  final void Function(BrontosaurusStatus status) next;
+
   BrontosaurusLogin({
     Key key,
     @required this.config,
+    @required this.next,
   }) : super(key: key);
 
   @override
@@ -17,6 +20,7 @@ class BrontosaurusLogin extends StatelessWidget {
       server: this.config.server,
       application: this.config.applicationKey,
       next: (String token) async {
+        this.next(BrontosaurusStatus());
         // final AuthorizationManager manager = AuthorizationManager.instance();
       },
     );

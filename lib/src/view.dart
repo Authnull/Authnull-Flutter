@@ -1,20 +1,23 @@
+import 'dart:async';
+
 import 'package:authnull/src/auth/auth.dart';
 import 'package:authnull/src/auth/config.dart';
-import 'package:authnull/src/brontosaurus/config.dart';
 import 'package:authnull/src/components/sign-in.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 class Authnull extends StatefulWidget {
   final Widget continueWithText;
   final ImageProvider<dynamic> backgroundImage;
   final List<AuthorizationConfig> configs;
 
+  final void Function(AuthorizationStaus status) onSignIn;
+
   Authnull({
     Key key,
     @required this.continueWithText,
     @required this.backgroundImage,
     @required this.configs,
+    @required this.onSignIn,
   }) : super(key: key);
 
   @override
@@ -49,6 +52,7 @@ class AuthnullState extends State<Authnull> {
             SignIn(
               continueWithText: widget.continueWithText,
               configs: widget.configs,
+              next: widget.onSignIn,
             ),
           ],
         ),

@@ -19,5 +19,9 @@ void main() => runApp(
             server: 'https://example.com',
           )
         ],
+        onSignIn: (AuthorizationStaus status) {
+          print('here');
+          print(status.platform);
+        },
       ),
     );

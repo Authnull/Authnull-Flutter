@@ -2,7 +2,7 @@ import 'package:authnull/src/auth/config.dart';
 import 'package:flutter/material.dart';
 
 class BrontosaurusConfig extends AuthorizationConfig {
-  final String type = 'Brontosaurus';
+  final String type = AuthorizationPlatform.Brontosaurus;
   final AppBar appBar;
 
   final String server;
@@ -13,4 +13,10 @@ class BrontosaurusConfig extends AuthorizationConfig {
     @required this.applicationKey,
     this.appBar,
   });
+}
+
+class BrontosaurusStatus extends AuthorizationStaus {
+  final String platform = AuthorizationPlatform.Brontosaurus;
+
+  BrontosaurusStatus();
 }

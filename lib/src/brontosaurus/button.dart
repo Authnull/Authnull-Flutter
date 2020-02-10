@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 class BrontosarusContinueWithButton extends StatelessWidget {
   final BrontosaurusConfig config;
 
+  final void Function(BrontosaurusStatus status) next;
+
   BrontosarusContinueWithButton({
     Key key,
     @required this.config,
+    @required this.next,
   }) : super(key: key);
 
   @override
@@ -27,6 +30,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
         Route route = MaterialPageRoute(
           builder: (context) => BrontosaurusLogin(
             config: this.config,
+            next: this.next,
           ),
         );
         Navigator.pushReplacement(context, route);
