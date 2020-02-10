@@ -11,13 +11,14 @@ void main() => runApp(
           'https://cdn.pixabay.com/photo/2020/02/04/20/48/italy-4819291_960_720.jpg',
         ),
         configs: [
+          GoogleConfig(),
           BrontosaurusConfig(
             appBar: AppBar(
               title: Text('Login'),
             ),
             applicationKey: 'Test',
             server: 'https://example.com',
-          )
+          ),
         ],
         onSignIn: (AuthorizationStaus status) {
           print(status.toString());

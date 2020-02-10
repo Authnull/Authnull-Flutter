@@ -1,6 +1,8 @@
+import 'package:authnull/authnull.dart';
 import 'package:authnull/src/auth/config.dart';
 import 'package:authnull/src/brontosaurus/button.dart';
 import 'package:authnull/src/brontosaurus/config.dart';
+import 'package:authnull/src/google/button.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -44,12 +46,23 @@ class SignIn extends StatelessWidget {
   }
 
   Widget _renderConfig(AuthorizationConfig config) {
-    if (config.type == 'Brontosaurus') {
-      final BrontosaurusConfig brontosaurusConfig = config;
-      return BrontosarusContinueWithButton(
-        config: brontosaurusConfig,
-        next: this.next,
-      );
+    switch (config.type) {
+      case AuthorizationPlatform.Brontosaurus:
+        {
+          final BrontosaurusConfig brontosaurusConfig = config;
+          return BrontosarusContinueWithButton(
+            config: brontosaurusConfig,
+            next: this.next,
+          );
+        }
+      case AuthorizationPlatform.Google:
+        {
+          final GoogleConfig googleConfig = config;
+          return GoogleContinueWithButton(
+            config: googleConfig,
+            next: this.next,
+          );
+        }
     }
     return Container();
   }
