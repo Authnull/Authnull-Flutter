@@ -5,3 +5,7 @@
 .pub/
 
 build/
+
+# Credential
+
+GoogleService-Info.plist

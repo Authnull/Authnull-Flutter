@@ -1,5 +1,6 @@
 import 'package:authnull/src/components/button.dart';
 import 'package:authnull/src/google/config.dart';
+import 'package:authnull/src/google/login.dart';
 import 'package:flutter/material.dart';
 
 class GoogleContinueWithButton extends StatelessWidget {
@@ -27,7 +28,7 @@ class GoogleContinueWithButton extends StatelessWidget {
       ),
       onPressed: () {
         Route route = MaterialPageRoute(
-          builder: (context) => Container(),
+          builder: (context) => SignInDemo(),
         );
         Navigator.pushReplacement(context, route);
       },
