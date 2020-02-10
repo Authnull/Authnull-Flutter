@@ -1,9 +1,22 @@
 import 'package:authnull/src/auth/auth.dart';
+import 'package:authnull/src/auth/config.dart';
+import 'package:authnull/src/brontosaurus/config.dart';
 import 'package:authnull/src/components/sign-in.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 class Authnull extends StatefulWidget {
+  final Widget continueWithText;
+  final ImageProvider<dynamic> backgroundImage;
+  final List<AuthorizationConfig> configs;
+
+  Authnull({
+    Key key,
+    @required this.continueWithText,
+    @required this.backgroundImage,
+    @required this.configs,
+  }) : super(key: key);
+
   @override
   AuthnullState createState() => AuthnullState();
 }
@@ -28,14 +41,15 @@ class AuthnullState extends State<Authnull> {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2020/02/04/20/48/italy-4819291_960_720.jpg',
-                  ),
+                  image: widget.backgroundImage,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            SignIn(),
+            SignIn(
+              continueWithText: widget.continueWithText,
+              configs: widget.configs,
+            ),
           ],
         ),
       ),
