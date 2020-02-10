@@ -52,7 +52,12 @@ class AuthnullState extends State<Authnull> {
             SignIn(
               continueWithText: widget.continueWithText,
               configs: widget.configs,
-              next: widget.onSignIn,
+              next: (AuthorizationStaus status) async {
+                final AuthorizationManager manager =
+                    AuthorizationManager.instance();
+                await manager.setType(status.platform);
+                widget.onSignIn(status);
+              },
             ),
           ],
         ),

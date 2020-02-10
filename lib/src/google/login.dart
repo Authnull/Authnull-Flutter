@@ -30,8 +30,6 @@ Future<FirebaseUser> signInWithGoogle() async {
   }
 }
 
-void signOutGoogle() async {
+Future<void> signOutGoogle() async {
   await _googleSignIn.signOut();
-
-  print("User Sign Out");
 }
