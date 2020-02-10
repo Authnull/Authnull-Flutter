@@ -1,7 +1,6 @@
 name: authnull
 description: A new flutter plugin project.
-version: 0.0.1
-author: WMXPY
+version: 0.1.0
 homepage: https://authnull.com
 
 environment:
