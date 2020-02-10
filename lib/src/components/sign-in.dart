@@ -1,4 +1,4 @@
-import 'package:authnull/components/button.dart';
+import 'package:authnull/src/components/button.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {

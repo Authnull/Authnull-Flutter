@@ -5,10 +5,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Home Page'),
         ),
         body: Center(
-          child: Text('Running on'),
+          child: Text('Running'),
         ),
       ),
     );
