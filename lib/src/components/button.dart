@@ -20,7 +20,7 @@ class ContinueWithButton extends StatelessWidget {
         width: double.infinity,
         child: RaisedButton(
           color: this.backgroundColor,
-          onPressed: () {},
+          onPressed: this.onPressed,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
