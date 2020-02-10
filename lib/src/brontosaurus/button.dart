@@ -22,10 +22,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
         "Brontosaurus",
         style: TextStyle(color: Colors.white),
       ),
-      icon: Icon(
-        Icons.favorite,
-        color: Colors.red,
-      ),
+      icon: this._getIcon(),
       onPressed: () {
         Route route = MaterialPageRoute(
           builder: (context) => BrontosaurusLogin(
@@ -36,5 +33,15 @@ class BrontosarusContinueWithButton extends StatelessWidget {
         Navigator.pushReplacement(context, route);
       },
     );
+  }
+
+  Widget _getIcon() {
+    if (this.config.icon == null) {
+      return Icon(
+        Icons.favorite,
+        color: Colors.red,
+      );
+    }
+    return this.config.icon;
   }
 }

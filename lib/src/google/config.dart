@@ -6,7 +6,11 @@ class GoogleConfig extends AuthorizationConfig {
   @override
   final String type = AuthorizationPlatform.Google;
 
-  GoogleConfig();
+  final Icon icon;
+
+  GoogleConfig({
+    this.icon,
+  });
 }
 
 class GoogleStatus extends AuthorizationStaus {

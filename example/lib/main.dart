@@ -16,6 +16,7 @@ void main() => runApp(
             appBar: AppBar(
               title: Text('Login'),
             ),
+            icon: Icon(Icons.ac_unit),
             applicationKey: 'Test',
             server: 'https://example.com',
           ),

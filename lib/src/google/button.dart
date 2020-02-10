@@ -23,10 +23,7 @@ class GoogleContinueWithButton extends StatelessWidget {
         "Google",
         style: TextStyle(color: Colors.white),
       ),
-      icon: Icon(
-        Icons.bookmark,
-        color: Colors.white,
-      ),
+      icon: this._getIcon(),
       onPressed: () {
         signInWithGoogle().then((FirebaseUser user) {
           if (user != null) {
@@ -38,5 +35,15 @@ class GoogleContinueWithButton extends StatelessWidget {
         });
       },
     );
+  }
+
+  Widget _getIcon() {
+    if (this.config.icon == null) {
+      return Icon(
+        Icons.bookmark,
+        color: Colors.white,
+      );
+    }
+    return this.config.icon;
   }
 }

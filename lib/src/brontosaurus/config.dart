@@ -5,6 +5,7 @@ class BrontosaurusConfig extends AuthorizationConfig {
   @override
   final String type = AuthorizationPlatform.Brontosaurus;
   final AppBar appBar;
+  final Icon icon;
 
   final String server;
   final String applicationKey;
@@ -13,6 +14,7 @@ class BrontosaurusConfig extends AuthorizationConfig {
     @required this.server,
     @required this.applicationKey,
     this.appBar,
+    this.icon,
   });
 }
 
