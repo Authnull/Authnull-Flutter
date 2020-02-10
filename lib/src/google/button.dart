@@ -27,10 +27,9 @@ class GoogleContinueWithButton extends StatelessWidget {
         color: Colors.white,
       ),
       onPressed: () {
-        Route route = MaterialPageRoute(
-          builder: (context) => SignInDemo(),
-        );
-        Navigator.pushReplacement(context, route);
+        signInWithGoogle().whenComplete(() {
+          print('Complete');
+        });
       },
     );
   }
