@@ -1,4 +1,5 @@
 import 'package:authnull/src/auth/config.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class GoogleConfig extends AuthorizationConfig {
@@ -12,16 +13,17 @@ class GoogleStatus extends AuthorizationStaus {
   @override
   final String platform = AuthorizationPlatform.Google;
 
-  final String raw;
+  final FirebaseUser user;
 
   GoogleStatus({
-    @required this.raw,
+    @required this.user,
   });
 
   @override
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
-      'raw': this.raw,
+      'displayName': this.user.displayName,
+      'email': this.user.email,
     };
     return map;
   }

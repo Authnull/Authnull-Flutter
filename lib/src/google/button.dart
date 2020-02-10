@@ -1,6 +1,7 @@
 import 'package:authnull/src/components/button.dart';
 import 'package:authnull/src/google/config.dart';
 import 'package:authnull/src/google/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class GoogleContinueWithButton extends StatelessWidget {
@@ -27,8 +28,13 @@ class GoogleContinueWithButton extends StatelessWidget {
         color: Colors.white,
       ),
       onPressed: () {
-        signInWithGoogle().whenComplete(() {
-          print('Complete');
+        signInWithGoogle().then((FirebaseUser user) {
+          if (user != null) {
+            final GoogleStatus result = GoogleStatus(
+              user: user,
+            );
+            this.next(result);
+          }
         });
       },
     );
