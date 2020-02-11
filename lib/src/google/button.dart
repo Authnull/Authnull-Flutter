@@ -6,11 +6,15 @@ import 'package:flutter/material.dart';
 
 class GoogleContinueWithButton extends StatelessWidget {
   final GoogleConfig config;
+  final bool lastLogin;
+  final Text lastLoginText;
 
   final void Function(GoogleStatus status) next;
 
   GoogleContinueWithButton({
     Key key,
+    @required this.lastLogin,
+    @required this.lastLoginText,
     @required this.config,
     @required this.next,
   }) : super(key: key);
@@ -18,6 +22,8 @@ class GoogleContinueWithButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContinueWithButton(
+      lastLogin: this.lastLogin,
+      lastLoginText: this.lastLoginText,
       backgroundColor: Colors.blue,
       text: Text(
         "Google",

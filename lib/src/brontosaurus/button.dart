@@ -5,11 +5,15 @@ import 'package:flutter/material.dart';
 
 class BrontosarusContinueWithButton extends StatelessWidget {
   final BrontosaurusConfig config;
+  final bool lastLogin;
+  final Text lastLoginText;
 
   final void Function(BrontosaurusStatus status) next;
 
   BrontosarusContinueWithButton({
     Key key,
+    @required this.lastLogin,
+    @required this.lastLoginText,
     @required this.config,
     @required this.next,
   }) : super(key: key);
@@ -17,6 +21,8 @@ class BrontosarusContinueWithButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContinueWithButton(
+      lastLogin: this.lastLogin,
+      lastLoginText: this.lastLoginText,
       backgroundColor: Colors.orangeAccent,
       text: Text(
         "Brontosaurus",

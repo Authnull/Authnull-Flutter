@@ -15,13 +15,15 @@ class AuthorizationManager {
   bool _inited = false;
   String type;
 
-  Future<void> init() async {
+  Future<String> init() async {
     if (this._inited) {
-      return;
+      return this.type;
     }
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     final String type = preferences.getString('authnull-preference-type');
     this.type = type;
+    print(type);
+    return type;
   }
 
   Future<void> setType(String type) async {
@@ -41,6 +43,8 @@ class AuthorizationManager {
           await signOutGoogle();
         }
     }
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.remove('authnull-preference-type');
     return;
   }
 }
