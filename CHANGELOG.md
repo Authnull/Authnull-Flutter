@@ -11,3 +11,7 @@
 
 - Allow edit icon for each service
 - Allow use customized frame for sign-in view
+
+## 0.2.0
+
+- Add previous button
