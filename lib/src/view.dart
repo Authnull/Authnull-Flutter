@@ -12,8 +12,6 @@ class Authnull extends StatefulWidget {
 
   final void Function(AuthorizationStaus status) onSignIn;
 
-  final Text lastLoginText;
-
   final Widget frame;
 
   Authnull({
@@ -22,7 +20,6 @@ class Authnull extends StatefulWidget {
     @required this.backgroundImage,
     @required this.configs,
     @required this.onSignIn,
-    @required this.lastLoginText,
     this.frame,
   }) : super(key: key);
 
@@ -69,7 +66,6 @@ class AuthnullState extends State<Authnull> {
                 await manager.setType(status.platform);
                 widget.onSignIn(status);
               },
-              lastLoginText: widget.lastLoginText,
               continueWithText: widget.continueWithText,
               frame: widget.frame,
             ),

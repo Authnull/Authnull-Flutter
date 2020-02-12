@@ -8,8 +8,11 @@ class GoogleConfig extends AuthorizationConfig {
 
   final Icon icon;
 
+  final Text lastLoginText;
+
   GoogleConfig({
     this.icon,
+    this.lastLoginText = const Text("LAST LOGGEDIN"),
   });
 }
 

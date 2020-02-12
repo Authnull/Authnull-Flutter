@@ -12,14 +12,11 @@ class SignIn extends StatelessWidget {
   final List<AuthorizationConfig> configs;
   final void Function(AuthorizationStaus status) next;
 
-  final Text lastLoginText;
-
   final Widget frame;
 
   SignIn({
     Key key,
     @required this.continueWithText,
-    @required this.lastLoginText,
     @required this.loginType,
     @required this.configs,
     @required this.next,
@@ -67,7 +64,6 @@ class SignIn extends StatelessWidget {
           final BrontosaurusConfig brontosaurusConfig = config;
           return BrontosarusContinueWithButton(
             lastLogin: this.loginType == AuthorizationPlatform.Brontosaurus,
-            lastLoginText: this.lastLoginText,
             config: brontosaurusConfig,
             next: this.next,
           );
@@ -77,7 +73,6 @@ class SignIn extends StatelessWidget {
           final GoogleConfig googleConfig = config;
           return GoogleContinueWithButton(
             lastLogin: this.loginType == AuthorizationPlatform.Google,
-            lastLoginText: this.lastLoginText,
             config: googleConfig,
             next: this.next,
           );

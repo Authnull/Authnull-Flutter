@@ -7,18 +7,23 @@ void main() => runApp(
           'Continue With',
           style: TextStyle(color: Colors.white),
         ),
-        lastLoginText: Text(
-          'Option Picked Last Time',
-          style: TextStyle(color: Colors.blueGrey),
-        ),
         backgroundImage: NetworkImage(
           'https://cdn.pixabay.com/photo/2020/02/04/20/48/italy-4819291_960_720.jpg',
         ),
         configs: [
-          GoogleConfig(),
+          GoogleConfig(
+            lastLoginText: Text(
+              'Option Picked Last Time',
+              style: TextStyle(color: Colors.blueGrey),
+            ),
+          ),
           BrontosaurusConfig(
             appBar: AppBar(
               title: Text('Login'),
+            ),
+            lastLoginText: Text(
+              'Option Picked Last Time',
+              style: TextStyle(color: Colors.blueGrey),
             ),
             icon: Icon(Icons.ac_unit),
             applicationKey: 'Test',

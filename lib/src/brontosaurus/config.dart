@@ -10,11 +10,14 @@ class BrontosaurusConfig extends AuthorizationConfig {
   final String server;
   final String applicationKey;
 
+  final Text lastLoginText;
+
   BrontosaurusConfig({
     @required this.server,
     @required this.applicationKey,
     this.appBar,
     this.icon,
+    this.lastLoginText = const Text('LAST LOGGEDIN'),
   });
 }
 
