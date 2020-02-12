@@ -20,7 +20,7 @@ class DebugContinueWithButton extends StatelessWidget {
     return ContinueWithButton(
       lastLogin: this.lastLogin,
       lastLoginText: this.config.lastLoginText,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.grey,
       text: Text(
         "Debug",
         style: TextStyle(color: Colors.white),
@@ -33,7 +33,7 @@ class DebugContinueWithButton extends StatelessWidget {
   Widget _getIcon() {
     if (this.config.icon == null) {
       return Icon(
-        Icons.bookmark,
+        Icons.bug_report,
         color: Colors.white,
       );
     }

@@ -29,6 +29,12 @@ void main() => runApp(
             applicationKey: 'Test',
             server: 'https://example.com',
           ),
+          DebugConfig(
+            lastLoginText: Text(
+              'Option Picked Last Time',
+              style: TextStyle(color: Colors.blueGrey),
+            ),
+          ),
         ],
         onSignIn: (AuthorizationStaus status) {
           print(status.toString());
