@@ -5,9 +5,11 @@ class DebugConfig extends AuthorizationConfig {
   @override
   final String type = AuthorizationPlatform.Debug;
   final Icon icon;
+  final Text lastLoginText;
 
   DebugConfig({
     this.icon,
+    this.lastLoginText = const Text("LAST LOGGEDIN"),
   });
 }
 

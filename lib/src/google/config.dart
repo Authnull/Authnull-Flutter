@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 class GoogleConfig extends AuthorizationConfig {
   @override
   final String type = AuthorizationPlatform.Google;
-
   final Icon icon;
-
   final Text lastLoginText;
 
   GoogleConfig({

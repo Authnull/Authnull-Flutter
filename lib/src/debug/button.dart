@@ -5,14 +5,12 @@ import 'package:flutter/material.dart';
 class DebugContinueWithButton extends StatelessWidget {
   final DebugConfig config;
   final bool lastLogin;
-  final Text lastLoginText;
 
   final void Function(DebugStatus status) next;
 
   DebugContinueWithButton({
     Key key,
     @required this.lastLogin,
-    @required this.lastLoginText,
     @required this.config,
     @required this.next,
   }) : super(key: key);
@@ -21,7 +19,7 @@ class DebugContinueWithButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContinueWithButton(
       lastLogin: this.lastLogin,
-      lastLoginText: this.lastLoginText,
+      lastLoginText: this.config.lastLoginText,
       backgroundColor: Colors.blue,
       text: Text(
         "Debug",

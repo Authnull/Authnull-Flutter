@@ -6,11 +6,10 @@ class BrontosaurusConfig extends AuthorizationConfig {
   final String type = AuthorizationPlatform.Brontosaurus;
   final AppBar appBar;
   final Icon icon;
+  final Text lastLoginText;
 
   final String server;
   final String applicationKey;
-
-  final Text lastLoginText;
 
   BrontosaurusConfig({
     @required this.server,

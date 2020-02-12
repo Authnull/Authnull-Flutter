@@ -2,6 +2,8 @@ import 'package:authnull/authnull.dart';
 import 'package:authnull/src/auth/config.dart';
 import 'package:authnull/src/brontosaurus/button.dart';
 import 'package:authnull/src/brontosaurus/config.dart';
+import 'package:authnull/src/debug/button.dart';
+import 'package:authnull/src/debug/config.dart';
 import 'package:authnull/src/google/button.dart';
 import 'package:flutter/material.dart';
 
@@ -74,6 +76,15 @@ class SignIn extends StatelessWidget {
           return GoogleContinueWithButton(
             lastLogin: this.loginType == AuthorizationPlatform.Google,
             config: googleConfig,
+            next: this.next,
+          );
+        }
+      case AuthorizationPlatform.Debug:
+        {
+          final DebugConfig debugConfig = config;
+          return DebugContinueWithButton(
+            lastLogin: this.loginType == AuthorizationPlatform.Debug,
+            config: debugConfig,
             next: this.next,
           );
         }
