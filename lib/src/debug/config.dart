@@ -26,7 +26,7 @@ class DebugStatus extends AuthorizationStaus {
   @override
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
-      username: this.username,
+      'username': this.username,
     };
     return map;
   }

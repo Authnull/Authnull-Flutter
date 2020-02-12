@@ -1,5 +1,6 @@
 import 'package:authnull/src/components/button.dart';
 import 'package:authnull/src/debug/config.dart';
+import 'package:authnull/src/debug/confirm.dart';
 import 'package:flutter/material.dart';
 
 class DebugContinueWithButton extends StatelessWidget {
@@ -7,12 +8,14 @@ class DebugContinueWithButton extends StatelessWidget {
   final bool lastLogin;
 
   final void Function(DebugStatus status) next;
+  final void Function() onPressed;
 
   DebugContinueWithButton({
     Key key,
     @required this.lastLogin,
     @required this.config,
     @required this.next,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -26,7 +29,18 @@ class DebugContinueWithButton extends StatelessWidget {
         style: TextStyle(color: Colors.white),
       ),
       icon: this._getIcon(),
-      onPressed: () {},
+      onPressed: () {
+        this.onPressed();
+        Route route = MaterialPageRoute(
+          builder: (context) => DebugConfirm(
+            next: (DebugStatus status) {
+              this.next(status);
+              Navigator.pop(context);
+            },
+          ),
+        );
+        Navigator.push(context, route);
+      },
     );
   }
 

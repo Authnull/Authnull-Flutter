@@ -20,10 +20,10 @@ class BrontosaurusLogin extends StatelessWidget {
       server: this.config.server,
       application: this.config.applicationKey,
       next: (String token) async {
-        this.next(BrontosaurusStatus(
+        final BrontosaurusStatus status = BrontosaurusStatus(
           raw: token,
-        ));
-        // final AuthorizationManager manager = AuthorizationManager.instance();
+        );
+        this.next(status);
       },
     );
   }

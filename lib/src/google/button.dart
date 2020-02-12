@@ -9,12 +9,14 @@ class GoogleContinueWithButton extends StatelessWidget {
   final bool lastLogin;
 
   final void Function(GoogleStatus status) next;
+  final void Function() onPressed;
 
   GoogleContinueWithButton({
     Key key,
     @required this.lastLogin,
     @required this.config,
     @required this.next,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class GoogleContinueWithButton extends StatelessWidget {
       ),
       icon: this._getIcon(),
       onPressed: () {
+        this.onPressed();
         signInWithGoogle().then((FirebaseUser user) {
           if (user != null) {
             final GoogleStatus result = GoogleStatus(

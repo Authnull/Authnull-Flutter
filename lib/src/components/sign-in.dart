@@ -13,6 +13,7 @@ class SignIn extends StatelessWidget {
   final String loginType;
   final List<AuthorizationConfig> configs;
   final void Function(AuthorizationStaus status) next;
+  final void Function() onPressed;
 
   SignIn({
     Key key,
@@ -20,6 +21,7 @@ class SignIn extends StatelessWidget {
     @required this.loginType,
     @required this.configs,
     @required this.next,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -55,6 +57,7 @@ class SignIn extends StatelessWidget {
             lastLogin: this.loginType == AuthorizationPlatform.Brontosaurus,
             config: brontosaurusConfig,
             next: this.next,
+            onPressed: this.onPressed,
           );
         }
       case AuthorizationPlatform.Google:
@@ -64,6 +67,7 @@ class SignIn extends StatelessWidget {
             lastLogin: this.loginType == AuthorizationPlatform.Google,
             config: googleConfig,
             next: this.next,
+            onPressed: this.onPressed,
           );
         }
       case AuthorizationPlatform.Debug:
@@ -73,6 +77,7 @@ class SignIn extends StatelessWidget {
             lastLogin: this.loginType == AuthorizationPlatform.Debug,
             config: debugConfig,
             next: this.next,
+            onPressed: this.onPressed,
           );
         }
     }

@@ -22,7 +22,6 @@ class AuthorizationManager {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     final String type = preferences.getString('authnull-preference-type');
     this.type = type;
-    print(type);
     return type;
   }
 

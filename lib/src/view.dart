@@ -76,6 +76,11 @@ class AuthnullState extends State<Authnull> {
                       await manager.setType(status.platform);
                       widget.onSignIn(status);
                     },
+                    onPressed: () {
+                      this.setState(() {
+                        this._showLogin = false;
+                      });
+                    },
                     continueWithText: widget.continueWithText,
                   ),
                 ),

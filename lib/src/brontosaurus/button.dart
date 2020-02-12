@@ -8,12 +8,14 @@ class BrontosarusContinueWithButton extends StatelessWidget {
   final bool lastLogin;
 
   final void Function(BrontosaurusStatus status) next;
+  final void Function() onPressed;
 
   BrontosarusContinueWithButton({
     Key key,
     @required this.lastLogin,
     @required this.config,
     @required this.next,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -28,13 +30,17 @@ class BrontosarusContinueWithButton extends StatelessWidget {
       ),
       icon: this._getIcon(),
       onPressed: () {
+        this.onPressed();
         Route route = MaterialPageRoute(
           builder: (context) => BrontosaurusLogin(
             config: this.config,
-            next: this.next,
+            next: (BrontosaurusStatus status) {
+              this.next(status);
+              Navigator.pop(context);
+            },
           ),
         );
-        Navigator.pushReplacement(context, route);
+        Navigator.push(context, route);
       },
     );
   }
