@@ -35,12 +35,14 @@ class AuthnullState extends State<Authnull> {
   }
 
   String _loginType;
+  bool _showLogin = false;
 
   Future<void> _init() async {
     final AuthorizationManager manager = AuthorizationManager.instance();
     final String loginType = await manager.init();
     setState(() {
       this._loginType = loginType;
+      this._showLogin = true;
     });
   }
 
@@ -57,18 +59,28 @@ class AuthnullState extends State<Authnull> {
                 ),
               ),
             ),
-            SignIn(
-              configs: widget.configs,
-              loginType: this._loginType,
-              next: (AuthorizationStaus status) async {
-                final AuthorizationManager manager =
-                    AuthorizationManager.instance();
-                await manager.setType(status.platform);
-                widget.onSignIn(status);
-              },
-              continueWithText: widget.continueWithText,
-              frame: widget.frame,
-            ),
+            Column(
+              children: <Widget>[
+                Expanded(
+                  child: widget.frame != null ? widget.frame : Container(),
+                ),
+                AnimatedOpacity(
+                  opacity: this._showLogin ? 1.0 : 0.0,
+                  duration: Duration(milliseconds: 300),
+                  child: SignIn(
+                    configs: widget.configs,
+                    loginType: this._loginType,
+                    next: (AuthorizationStaus status) async {
+                      final AuthorizationManager manager =
+                          AuthorizationManager.instance();
+                      await manager.setType(status.platform);
+                      widget.onSignIn(status);
+                    },
+                    continueWithText: widget.continueWithText,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
