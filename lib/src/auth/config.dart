@@ -1,5 +1,6 @@
 class AuthorizationPlatform {
   static const String Brontosaurus = "Brontosaurus";
+  static const String Debug = "Debug";
   static const String Google = "Google";
 }
 
