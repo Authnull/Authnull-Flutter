@@ -15,3 +15,10 @@
 ## 0.2.0
 
 - Add previous button
+
+## 0.3.0
+
+- Add go back feature
+- Add debug login method
+- Add animation
+- Add empty before login view
