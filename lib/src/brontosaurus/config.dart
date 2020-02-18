@@ -47,6 +47,7 @@ class BrontosaurusStatus implements AuthorizationStaus {
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
+      'platform': this.platform,
       'username': this.username,
       'displayName': this.displayName,
       'identifier': this.identifier,

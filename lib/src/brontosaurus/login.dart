@@ -25,17 +25,20 @@ class BrontosaurusLogin extends StatelessWidget {
         Codec<String, String> stringToBase64 = utf8.fuse(base64);
         final List<String> splited = token.split('.').toList();
 
+        final String normalizedHeader = base64.normalize(splited[0]);
+        final String normalizedBody = base64.normalize(splited[1]);
+
         final Map<String, dynamic> header =
-            json.decode(stringToBase64.decode(splited[0]));
+            json.decode(stringToBase64.decode(normalizedHeader));
         final Map<String, dynamic> body =
-            json.decode(stringToBase64.decode(splited[1]));
+            json.decode(stringToBase64.decode(normalizedBody));
 
         final BrontosaurusStatus status = BrontosaurusStatus(
           username: body['username'],
           displayName: body['displayName'],
-          identifier: body['username'] + header['key'] + body['mint'],
+          identifier: body['username'] + '-' + header['key'],
           email: body['email'],
-          phone: null,
+          phone: body['phone'],
           infos: body['infos'],
           beacons: body['beacons'],
           raw: token,

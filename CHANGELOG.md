@@ -49,3 +49,11 @@
 ## 1.0.3
 
 - Fix google token
+
+## 1.0.4
+
+- Normalize Raw B10s Token
+
+## 1.0.5
+
+- Add platform property in config map
