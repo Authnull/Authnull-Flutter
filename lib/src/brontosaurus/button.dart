@@ -9,6 +9,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
 
   final void Function(BrontosaurusStatus status) next;
   final void Function() onPressed;
+  final void Function() onCancel;
 
   BrontosarusContinueWithButton({
     Key key,
@@ -16,6 +17,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
     @required this.config,
     @required this.next,
     @required this.onPressed,
+    @required this.onCancel,
   }) : super(key: key);
 
   @override
@@ -36,11 +38,10 @@ class BrontosarusContinueWithButton extends StatelessWidget {
             config: this.config,
             next: (BrontosaurusStatus status) {
               this.next(status);
-              Navigator.pop(context);
             },
           ),
         );
-        Navigator.push(context, route);
+        Navigator.push(context, route).whenComplete(this.onCancel);
       },
     );
   }

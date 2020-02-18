@@ -9,6 +9,7 @@ class DebugContinueWithButton extends StatelessWidget {
 
   final void Function(DebugStatus status) next;
   final void Function() onPressed;
+  final void Function() onCancel;
 
   DebugContinueWithButton({
     Key key,
@@ -16,6 +17,7 @@ class DebugContinueWithButton extends StatelessWidget {
     @required this.config,
     @required this.next,
     @required this.onPressed,
+    @required this.onCancel,
   }) : super(key: key);
 
   @override
@@ -35,11 +37,10 @@ class DebugContinueWithButton extends StatelessWidget {
           builder: (context) => DebugConfirm(
             next: (DebugStatus status) {
               this.next(status);
-              Navigator.pop(context);
             },
           ),
         );
-        Navigator.push(context, route);
+        Navigator.push(context, route).whenComplete(this.onCancel);
       },
     );
   }

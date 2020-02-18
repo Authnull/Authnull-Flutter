@@ -22,3 +22,12 @@
 - Add debug login method
 - Add animation
 - Add empty before login view
+
+## 0.4.0
+
+- Add Cancel resume on all methods
+- implement get preference function
+  
+## 0.4.1
+
+- Fix Google Login Cancel

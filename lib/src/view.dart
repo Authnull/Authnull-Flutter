@@ -81,6 +81,11 @@ class AuthnullState extends State<Authnull> {
                         this._showLogin = false;
                       });
                     },
+                    onCancel: () {
+                      this.setState(() {
+                        this._showLogin = true;
+                      });
+                    },
                     continueWithText: widget.continueWithText,
                   ),
                 ),

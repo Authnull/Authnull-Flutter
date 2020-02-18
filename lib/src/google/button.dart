@@ -10,6 +10,7 @@ class GoogleContinueWithButton extends StatelessWidget {
 
   final void Function(GoogleStatus status) next;
   final void Function() onPressed;
+  final void Function() onCancel;
 
   GoogleContinueWithButton({
     Key key,
@@ -17,6 +18,7 @@ class GoogleContinueWithButton extends StatelessWidget {
     @required this.config,
     @required this.next,
     @required this.onPressed,
+    @required this.onCancel,
   }) : super(key: key);
 
   @override
@@ -32,14 +34,22 @@ class GoogleContinueWithButton extends StatelessWidget {
       icon: this._getIcon(),
       onPressed: () {
         this.onPressed();
-        signInWithGoogle().then((FirebaseUser user) {
-          if (user != null) {
-            final GoogleStatus result = GoogleStatus(
-              user: user,
-            );
-            this.next(result);
-          }
-        });
+        try {
+          signInWithGoogle().then((FirebaseUser user) {
+            if (user != null) {
+              final GoogleStatus result = GoogleStatus(
+                user: user,
+              );
+              this.next(result);
+            } else {
+              this.onCancel();
+            }
+          }).catchError((Object error) {
+            this.onCancel();
+          });
+        } on Exception {
+          this.onCancel();
+        }
       },
     );
   }
