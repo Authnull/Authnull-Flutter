@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:authnull/src/brontosaurus/config.dart';
 import 'package:brontosaurus_flutter/brontosaurus_flutter.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +22,25 @@ class BrontosaurusLogin extends StatelessWidget {
       server: this.config.server,
       application: this.config.applicationKey,
       next: (String token) async {
+        Codec<String, String> stringToBase64 = utf8.fuse(base64);
+        final List<String> splited = token.split('.').toList();
+
+        final Map<String, dynamic> header =
+            json.decode(stringToBase64.decode(splited[0]));
+        final Map<String, dynamic> body =
+            json.decode(stringToBase64.decode(splited[1]));
+
         final BrontosaurusStatus status = BrontosaurusStatus(
+          username: body['username'],
+          displayName: body['displayName'],
+          identifier: body['username'] + header['key'] + body['mint'],
+          email: body['email'],
+          phone: null,
+          infos: body['infos'],
+          beacons: body['beacons'],
           raw: token,
         );
+
         this.next(status);
       },
     );

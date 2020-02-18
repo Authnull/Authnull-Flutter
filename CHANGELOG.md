@@ -31,3 +31,17 @@
 ## 0.4.1
 
 - Fix Google Login Cancel
+
+## 1.0.0
+
+- Initial Version
+- Polish Configurations
+- Add Config support
+
+## 1.0.1
+
+- Add Auth token for google method
+  
+## 1.0.2
+
+- Fix google token

@@ -13,11 +13,18 @@ class DebugConfig extends AuthorizationConfig {
   });
 }
 
-class DebugStatus extends AuthorizationStaus {
+class DebugStatus implements AuthorizationStaus {
   @override
   final String platform = AuthorizationPlatform.Debug;
 
   final String username;
+  final String displayName = 'Display Name';
+  final String identifier = 'Identifier';
+  final String email = 'example@example.com';
+  final String phone = '123456780';
+
+  final Map<String, dynamic> infos = Map();
+  final Map<String, dynamic> beacons = Map();
 
   DebugStatus({
     @required this.username,
@@ -27,6 +34,12 @@ class DebugStatus extends AuthorizationStaus {
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
       'username': this.username,
+      'displayName': this.displayName,
+      'identifier': this.identifier,
+      'email': this.email,
+      'phone': this.phone,
+      'infos': this.infos,
+      'beacons': this.beacons,
     };
     return map;
   }

@@ -20,25 +20,45 @@ class BrontosaurusConfig extends AuthorizationConfig {
   });
 }
 
-class BrontosaurusStatus extends AuthorizationStaus {
-  @override
+class BrontosaurusStatus implements AuthorizationStaus {
   final String platform = AuthorizationPlatform.Brontosaurus;
+
+  final String username;
+  final String displayName;
+  final String identifier;
+  final String email;
+  final String phone;
+
+  final Map<String, dynamic> infos;
+  final Map<String, dynamic> beacons;
 
   final String raw;
 
   BrontosaurusStatus({
+    @required this.username,
+    @required this.displayName,
+    @required this.identifier,
+    @required this.email,
+    @required this.phone,
+    @required this.infos,
+    @required this.beacons,
     @required this.raw,
   });
 
-  @override
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
+      'username': this.username,
+      'displayName': this.displayName,
+      'identifier': this.identifier,
+      'email': this.email,
+      'phone': this.phone,
+      'infos': this.infos,
+      'beacons': this.beacons,
       'raw': this.raw,
     };
     return map;
   }
 
-  @override
   String toString() {
     return this.toMap().toString();
   }

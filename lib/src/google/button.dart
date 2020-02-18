@@ -37,10 +37,23 @@ class GoogleContinueWithButton extends StatelessWidget {
         try {
           signInWithGoogle().then((FirebaseUser user) {
             if (user != null) {
-              final GoogleStatus result = GoogleStatus(
-                user: user,
-              );
-              this.next(result);
+              user.getIdToken().then((IdTokenResult token) {
+                final GoogleStatus result = GoogleStatus(
+                  username: user.email,
+                  displayName: user.displayName,
+                  identifier: user.uid,
+                  email: user.email,
+                  phone: user.phoneNumber,
+                  infos: {
+                    'photo': user.photoUrl,
+                  },
+                  beacons: {},
+                  token: token.token,
+                );
+                this.next(result);
+              }).catchError((Object error) {
+                this.onCancel();
+              });
             } else {
               this.onCancel();
             }
