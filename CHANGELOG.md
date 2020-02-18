@@ -45,3 +45,7 @@
 ## 1.0.2
 
 - Fix google token
+
+## 1.0.3
+
+- Fix google token

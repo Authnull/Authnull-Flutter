@@ -19,7 +19,7 @@ class DebugStatus implements AuthorizationStaus {
 
   final String username;
   final String displayName = 'Display Name';
-  final String identifier = 'Identifier';
+  final String identifier;
   final String email = 'example@example.com';
   final String phone = '123456780';
 
@@ -28,6 +28,7 @@ class DebugStatus implements AuthorizationStaus {
 
   DebugStatus({
     @required this.username,
+    @required this.identifier,
   });
 
   @override
