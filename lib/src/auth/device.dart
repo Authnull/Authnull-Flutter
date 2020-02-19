@@ -53,4 +53,20 @@ class DeviceIdentityInfo {
     this.deviceIndetifier,
     this.isPhysicalDevice,
   });
+
+  Map<String, dynamic> toMap() {
+    Map<String, dynamic> map = {
+      'deviceName': this.deviceName,
+      'deviceModel': this.deviceModel,
+      'deviceSystem': this.deviceSystem,
+      'deviceVersion': this.deviceVersion,
+      'deviceIndetifier': this.deviceIndetifier,
+      'isPhysicalDevice': this.isPhysicalDevice,
+    };
+    return map;
+  }
+
+  String toString() {
+    return this.toMap().toString();
+  }
 }
