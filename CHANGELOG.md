@@ -57,3 +57,9 @@
 ## 1.0.5
 
 - Add platform property in config map
+
+## 1.1.0
+
+- Fix minor bugs
+- Add Android device info support
+- Add IOS device info support
