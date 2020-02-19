@@ -15,7 +15,7 @@ class DeviceIdentityInfo {
           deviceModel: info.model,
           deviceSystem: info.version.baseOS,
           deviceVersion: info.version.toString(),
-          deviceIndetifier: info.androidId,
+          deviceIdentifier: info.androidId,
           isPhysicalDevice: info.isPhysicalDevice,
         );
       } else if (Platform.isIOS) {
@@ -26,7 +26,7 @@ class DeviceIdentityInfo {
           deviceModel: info.model,
           deviceSystem: info.systemName,
           deviceVersion: info.systemVersion,
-          deviceIndetifier: info.identifierForVendor,
+          deviceIdentifier: info.identifierForVendor,
           isPhysicalDevice: info.isPhysicalDevice,
         );
       }
@@ -41,7 +41,7 @@ class DeviceIdentityInfo {
   final String deviceModel;
   final String deviceSystem;
   final String deviceVersion;
-  final String deviceIndetifier;
+  final String deviceIdentifier;
 
   final bool isPhysicalDevice;
 
@@ -50,7 +50,7 @@ class DeviceIdentityInfo {
     this.deviceModel,
     this.deviceSystem,
     this.deviceVersion,
-    this.deviceIndetifier,
+    this.deviceIdentifier,
     this.isPhysicalDevice,
   });
 
@@ -60,7 +60,7 @@ class DeviceIdentityInfo {
       'deviceModel': this.deviceModel,
       'deviceSystem': this.deviceSystem,
       'deviceVersion': this.deviceVersion,
-      'deviceIndetifier': this.deviceIndetifier,
+      'deviceIdentifier': this.deviceIdentifier,
       'isPhysicalDevice': this.isPhysicalDevice,
     };
     return map;

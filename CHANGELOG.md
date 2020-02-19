@@ -63,3 +63,7 @@
 - Fix minor bugs
 - Add Android device info support
 - Add IOS device info support
+
+## 1.1.2
+
+- Fix device info typo
