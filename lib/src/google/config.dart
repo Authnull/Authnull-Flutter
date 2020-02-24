@@ -6,10 +6,12 @@ class GoogleConfig extends AuthorizationConfig {
   final String type = AuthorizationPlatform.Google;
   final Icon icon;
   final Text lastLoginText;
+  final Text methodText;
 
   GoogleConfig({
     this.icon,
     this.lastLoginText = const Text("LAST LOGGEDIN"),
+    this.methodText = const Text('GOOGLE'),
   });
 }
 

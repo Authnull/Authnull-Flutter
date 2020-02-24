@@ -27,10 +27,7 @@ class GoogleContinueWithButton extends StatelessWidget {
       lastLogin: this.lastLogin,
       lastLoginText: this.config.lastLoginText,
       backgroundColor: Colors.blue,
-      text: Text(
-        "Google",
-        style: TextStyle(color: Colors.white),
-      ),
+      text: this.config.methodText,
       icon: this._getIcon(),
       onPressed: () {
         this.onPressed();

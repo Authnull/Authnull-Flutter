@@ -26,10 +26,7 @@ class DebugContinueWithButton extends StatelessWidget {
       lastLogin: this.lastLogin,
       lastLoginText: this.config.lastLoginText,
       backgroundColor: Colors.grey,
-      text: Text(
-        "Debug",
-        style: TextStyle(color: Colors.white),
-      ),
+      text: this.config.methodText,
       icon: this._getIcon(),
       onPressed: () {
         this.onPressed();
