@@ -67,3 +67,9 @@
 ## 1.1.2
 
 - Fix device info typo
+
+## 1.2.0
+
+- Add configurable background color in configs
+- Add configurable method text in configs
+- Fix debug default phone number
