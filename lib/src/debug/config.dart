@@ -11,7 +11,7 @@ class DebugConfig extends AuthorizationConfig {
 
   DebugConfig({
     this.icon,
-    this.lastLoginText = const Text("LAST LOGGEDIN"),
+    this.lastLoginText = const Text("LAST LOGGED-IN"),
     this.methodText = const Text('DEBUG'),
     this.backgroundColor = Colors.grey,
   });

@@ -11,7 +11,7 @@ class GoogleConfig extends AuthorizationConfig {
 
   GoogleConfig({
     this.icon,
-    this.lastLoginText = const Text("LAST LOGGEDIN"),
+    this.lastLoginText = const Text("LAST LOGGED-IN"),
     this.methodText = const Text('GOOGLE'),
     this.backgroundColor = Colors.blue,
   });
