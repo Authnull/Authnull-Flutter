@@ -8,6 +8,7 @@ class BrontosaurusConfig extends AuthorizationConfig {
   final Icon icon;
   final Text lastLoginText;
   final Text methodText;
+  final Color backgroundColor;
 
   final String server;
   final String applicationKey;
@@ -19,6 +20,7 @@ class BrontosaurusConfig extends AuthorizationConfig {
     this.icon,
     this.lastLoginText = const Text('LAST LOGGEDIN'),
     this.methodText = const Text('BRONTOSAURUS'),
+    this.backgroundColor = Colors.orangeAccent,
   });
 }
 
