@@ -44,14 +44,16 @@ class DebugConfirmState extends State<DebugConfirm> {
             ),
             RaisedButton(
               color: Colors.blue,
-              onPressed: () {
-                final String text = this._usernameController.text;
-                final DebugStatus status = DebugStatus(
-                  username: text,
-                  identifier: text + '-identifier',
-                );
-                widget.next(status);
-              },
+              onPressed: this._usernameController.text.isNotEmpty
+                  ? () {
+                      final String text = this._usernameController.text;
+                      final DebugStatus status = DebugStatus(
+                        username: text,
+                        identifier: text + '-identifier',
+                      );
+                      widget.next(status);
+                    }
+                  : null,
               child: Text('Submit'),
             ),
           ],

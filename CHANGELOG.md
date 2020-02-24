@@ -73,3 +73,7 @@
 - Add configurable background color in configs
 - Add configurable method text in configs
 - Fix debug default phone number
+
+## 1.2.1
+
+- Disable debug submit button if empty
