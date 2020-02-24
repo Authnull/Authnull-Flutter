@@ -21,7 +21,7 @@ class DebugStatus implements AuthorizationStaus {
   final String displayName = 'Display Name';
   final String identifier;
   final String email = 'example@example.com';
-  final String phone = '123456780';
+  final String phone = '1234567890';
 
   final Map<String, dynamic> infos = Map();
   final Map<String, dynamic> beacons = Map();

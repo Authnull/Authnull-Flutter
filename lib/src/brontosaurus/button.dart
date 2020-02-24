@@ -26,10 +26,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
       lastLogin: this.lastLogin,
       lastLoginText: this.config.lastLoginText,
       backgroundColor: Colors.orangeAccent,
-      text: Text(
-        "Brontosaurus",
-        style: TextStyle(color: Colors.white),
-      ),
+      text: this.config.methodText,
       icon: this._getIcon(),
       onPressed: () {
         this.onPressed();
