@@ -77,3 +77,7 @@
 ## 1.2.1
 
 - Disable debug submit button if empty
+
+## 1.2.2
+
+- Fix static change bug

@@ -16,6 +16,8 @@ class DebugConfirm extends StatefulWidget {
 class DebugConfirmState extends State<DebugConfirm> {
   final _usernameController = TextEditingController();
 
+  bool _allowSubmit = false;
+
   @override
   void initState() {
     super.initState();
@@ -41,10 +43,15 @@ class DebugConfirmState extends State<DebugConfirm> {
           children: <Widget>[
             TextField(
               controller: this._usernameController,
+              onChanged: (String next) {
+                this.setState(() {
+                  this._allowSubmit = next.isNotEmpty;
+                });
+              },
             ),
             RaisedButton(
               color: Colors.blue,
-              onPressed: this._usernameController.text.isNotEmpty
+              onPressed: this._allowSubmit
                   ? () {
                       final String text = this._usernameController.text;
                       final DebugStatus status = DebugStatus(
