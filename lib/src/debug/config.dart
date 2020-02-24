@@ -17,7 +17,7 @@ class DebugConfig extends AuthorizationConfig {
   });
 }
 
-class DebugStatus implements AuthorizationStaus {
+class DebugStatus implements AuthorizationStatus {
   @override
   final String platform = AuthorizationPlatform.Debug;
 

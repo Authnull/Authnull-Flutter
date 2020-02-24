@@ -17,7 +17,7 @@ class GoogleConfig extends AuthorizationConfig {
   });
 }
 
-class GoogleStatus implements AuthorizationStaus {
+class GoogleStatus implements AuthorizationStatus {
   @override
   final String platform = AuthorizationPlatform.Google;
 

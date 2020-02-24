@@ -18,13 +18,13 @@ class BrontosaurusConfig extends AuthorizationConfig {
     @required this.applicationKey,
     this.appBar,
     this.icon,
-    this.lastLoginText = const Text('LAST LOGGEDIN'),
+    this.lastLoginText = const Text('LAST LOGGED-IN'),
     this.methodText = const Text('BRONTOSAURUS'),
     this.backgroundColor = Colors.orangeAccent,
   });
 }
 
-class BrontosaurusStatus implements AuthorizationStaus {
+class BrontosaurusStatus implements AuthorizationStatus {
   final String platform = AuthorizationPlatform.Brontosaurus;
 
   final String username;

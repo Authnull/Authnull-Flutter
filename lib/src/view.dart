@@ -10,7 +10,7 @@ class Authnull extends StatefulWidget {
   final ImageProvider<dynamic> backgroundImage;
   final List<AuthorizationConfig> configs;
 
-  final void Function(AuthorizationStaus status) onSignIn;
+  final void Function(AuthorizationStatus status) onSignIn;
 
   final Widget frame;
 
@@ -70,7 +70,7 @@ class AuthnullState extends State<Authnull> {
                   child: SignIn(
                     configs: widget.configs,
                     loginType: this._loginType,
-                    next: (AuthorizationStaus status) async {
+                    next: (AuthorizationStatus status) async {
                       final AuthorizationManager manager =
                           AuthorizationManager.instance();
                       await manager.setType(status.platform);

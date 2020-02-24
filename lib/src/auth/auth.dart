@@ -10,7 +10,7 @@ class AuthorizationManager {
     return _instance;
   }
 
-  static Future<String> getPerferenceType() async {
+  static Future<String> getPreferenceType() async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     final String type = preferences.getString('authnull-preference-type');
     return type;

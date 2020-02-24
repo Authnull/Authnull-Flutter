@@ -81,3 +81,7 @@
 ## 1.2.2
 
 - Fix static change bug
+
+## 1.3.0
+
+- Fix Major Spelling errors

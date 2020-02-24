@@ -37,7 +37,7 @@ class Auth extends StatelessWidget {
           ),
         ),
       ],
-      onSignIn: (AuthorizationStaus status) {
+      onSignIn: (AuthorizationStatus status) {
         print(status.toString());
       },
     );

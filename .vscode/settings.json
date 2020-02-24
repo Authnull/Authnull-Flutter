@@ -2,8 +2,14 @@
     "cSpell.words": [
         "Cupertino",
         "Schyler",
+        "Stateful",
         "WMXPY",
         "authnull",
+        "inited",
+        "splited",
         "webview"
+    ],
+    "cSpell.enableFiletypes": [
+        "dart"
     ]
 }

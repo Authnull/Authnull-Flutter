@@ -12,7 +12,7 @@ class SignIn extends StatelessWidget {
 
   final String loginType;
   final List<AuthorizationConfig> configs;
-  final void Function(AuthorizationStaus status) next;
+  final void Function(AuthorizationStatus status) next;
   final void Function() onPressed;
   final void Function() onCancel;
 
@@ -55,7 +55,7 @@ class SignIn extends StatelessWidget {
       case AuthorizationPlatform.Brontosaurus:
         {
           final BrontosaurusConfig brontosaurusConfig = config;
-          return BrontosarusContinueWithButton(
+          return BrontosaurusContinueWithButton(
             lastLogin: this.loginType == AuthorizationPlatform.Brontosaurus,
             config: brontosaurusConfig,
             next: this.next,

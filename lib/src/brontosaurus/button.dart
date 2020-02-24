@@ -3,7 +3,7 @@ import 'package:authnull/src/brontosaurus/login.dart';
 import 'package:authnull/src/components/button.dart';
 import 'package:flutter/material.dart';
 
-class BrontosarusContinueWithButton extends StatelessWidget {
+class BrontosaurusContinueWithButton extends StatelessWidget {
   final BrontosaurusConfig config;
   final bool lastLogin;
 
@@ -11,7 +11,7 @@ class BrontosarusContinueWithButton extends StatelessWidget {
   final void Function() onPressed;
   final void Function() onCancel;
 
-  BrontosarusContinueWithButton({
+  BrontosaurusContinueWithButton({
     Key key,
     @required this.lastLogin,
     @required this.config,

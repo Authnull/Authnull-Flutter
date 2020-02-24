@@ -8,7 +8,7 @@ abstract class AuthorizationConfig {
   String type;
 }
 
-abstract class AuthorizationStaus {
+abstract class AuthorizationStatus {
   final String platform;
   final String username;
   final String displayName;
@@ -19,7 +19,7 @@ abstract class AuthorizationStaus {
   final Map<String, dynamic> infos;
   final Map<String, dynamic> beacons;
 
-  AuthorizationStaus({
+  AuthorizationStatus({
     this.platform,
     this.username,
     this.displayName,
