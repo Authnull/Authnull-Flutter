@@ -14,7 +14,7 @@ class DeviceIdentityInfo {
           deviceName: info.model,
           deviceModel: info.model,
           deviceSystem: info.version.baseOS,
-          deviceVersion: info.version.toString(),
+          deviceVersion: info.version.release,
           deviceIdentifier: info.androidId,
           isPhysicalDevice: info.isPhysicalDevice,
         );

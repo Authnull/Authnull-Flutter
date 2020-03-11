@@ -89,3 +89,7 @@
 ## 1.3.1
 
 - Fix Minor Spelling errors
+
+## 1.3.2
+
+- Fix android build version number
