@@ -27,8 +27,8 @@ class Auth extends StatelessWidget {
             'Option Picked Last Time',
             style: TextStyle(color: Colors.blueGrey),
           ),
-          applicationKey: 'Test',
-          server: 'https://example.com',
+          applicationKey: 'BRONTOSAURUS_RED',
+          server: 'https://devl.auth.rpngo.com',
         ),
         DebugConfig(
           lastLoginText: Text(

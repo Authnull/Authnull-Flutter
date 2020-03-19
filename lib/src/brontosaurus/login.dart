@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:authnull/src/brontosaurus/config.dart';
 import 'package:brontosaurus_flutter/brontosaurus_flutter.dart';
 import 'package:flutter/material.dart';
@@ -22,25 +20,20 @@ class BrontosaurusLogin extends StatelessWidget {
       server: this.config.server,
       application: this.config.applicationKey,
       next: (String token) async {
-        Codec<String, String> stringToBase64 = utf8.fuse(base64);
-        final List<String> splited = token.split('.').toList();
+        final Token brontosaurusToken = Token.create(token);
 
-        final String normalizedHeader = base64.normalize(splited[0]);
-        final String normalizedBody = base64.normalize(splited[1]);
-
-        final Map<String, dynamic> header =
-            json.decode(stringToBase64.decode(normalizedHeader));
-        final Map<String, dynamic> body =
-            json.decode(stringToBase64.decode(normalizedBody));
+        final String identifier = brontosaurusToken.getCombined() +
+            '-' +
+            brontosaurusToken.applicationKey;
 
         final BrontosaurusStatus status = BrontosaurusStatus(
-          username: body['username'],
-          displayName: body['displayName'],
-          identifier: body['username'] + '-' + header['key'],
-          email: body['email'],
-          phone: body['phone'],
-          infos: body['infos'],
-          beacons: body['beacons'],
+          username: brontosaurusToken.getCombined(),
+          displayName: brontosaurusToken.displayName,
+          identifier: identifier,
+          email: brontosaurusToken.email,
+          phone: brontosaurusToken.phone,
+          infos: brontosaurusToken.infos,
+          beacons: brontosaurusToken.beacons,
           raw: token,
         );
 
