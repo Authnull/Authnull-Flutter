@@ -6,10 +6,12 @@
         "WMXPY",
         "authnull",
         "inited",
+        "macos",
         "splited",
         "webview"
     ],
     "cSpell.enableFiletypes": [
-        "dart"
+        "dart",
+        "yaml"
     ]
 }

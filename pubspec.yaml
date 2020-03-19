@@ -1,10 +1,11 @@
 name: authnull
 description: Authnull Flutter implements, use a single login method for all service you loved.
-version: 1.3.2
+version: 1.4.0
 homepage: https://authnull.com
 
 environment:
   sdk: ">=2.2.2 <3.0.0"
+  flutter: ">=1.10.0 <2.0.0"
 
 dependencies:
   flutter:
@@ -22,5 +23,15 @@ dev_dependencies:
 
 flutter:
   plugin:
-    androidPackage: com.authnull.authnull
-    pluginClass: AuthnullPlugin
+    platforms:
+      android:
+        package: com.authnull.authnull
+        pluginClass: AuthnullPlugin
+      ios:
+        pluginClass: AuthnullPlugin
+      linux:
+        pluginClass: AuthnullPlugin
+      macos:
+        pluginClass: AuthnullPlugin
+      windows:
+        pluginClass: AuthnullPlugin
